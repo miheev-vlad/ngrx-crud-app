@@ -1,0 +1,83 @@
+<div class="container">
+  <form [formGroup]="addItemForm">
+    <legend>Add New Item</legend>
+    <div class="mb-3 has-validation">
+      <label for="txtName" class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="txtName"
+        formControlName="title"
+        [ngClass]="{
+          'is-invalid': submitted && currentControl['title'].errors
+        }"
+      />
+      <div
+        *ngIf="submitted && currentControl['title'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="currentControl['title'].errors['required']">
+          This field is required
+        </div>
+        <div *ngIf="currentControl['title'].errors['minlength']">
+          Minimum length 5 characters
+        </div>
+        <div *ngIf="currentControl['title'].errors['maxlength']">
+          Maximum length 50 characters
+        </div>
+      </div>
+    </div>
+    <div class="mb-3 has-validation">
+      <label for="txtDescription" class="form-label">Description</label>
+      <input
+        type="text"
+        class="form-control"
+        id="txtDescription"
+        formControlName="description"
+        [ngClass]="{
+          'is-invalid': submitted && currentControl['description'].errors
+        }"
+      />
+      <div
+        *ngIf="submitted && currentControl['description'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="currentControl['description'].errors['required']">
+          This field is required
+        </div>
+        <div *ngIf="currentControl['description'].errors['minlength']">
+          Minimum length 5 characters
+        </div>
+        <div *ngIf="currentControl['description'].errors['maxlength']">
+          Maximum length 50 characters
+        </div>
+      </div>
+    </div>
+    <div class="mb-3 has-validation">
+      <label for="txtCost" class="form-label">Cost</label>
+      <input
+        type="number"
+        class="form-control"
+        id="txtCost"
+        formControlName="cost"
+        [ngClass]="{
+          'is-invalid': submitted && currentControl['cost'].errors
+        }"
+      />
+      <div
+        *ngIf="submitted && currentControl['cost'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="currentControl['cost'].errors['required']">
+          This field is required
+        </div>
+        <div *ngIf="currentControl['cost'].errors['min']">
+          The value must be greater than 0
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-dark" type="submit" (click)="onCreate()">
+      Create
+    </button>
+  </form>
+</div>

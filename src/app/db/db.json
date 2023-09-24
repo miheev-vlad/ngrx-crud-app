@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "First Item Title",
+      "description": "First description",
+      "cost": 500
+    },
+    {
+      "id": 2,
+      "title": "Second Item Title",
+      "description": "Second description",
+      "cost": 550
+    },
+    {
+      "id": 3,
+      "title": "Thread Item Title",
+      "description": "Thread description",
+      "cost": 400
+    },
+    {
+      "id": 4,
+      "title": "Fourth Item Title",
+      "description": "Fourth description",
+      "cost": 600
+    },
+    {
+      "id": 5,
+      "title": "Fifth Item Title",
+      "description": "Fifth description",
+      "cost": 700
+    }
+  ]
+}

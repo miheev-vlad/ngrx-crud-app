@@ -1,0 +1,15 @@
+<div class="card my-2">
+  <div class="card-body">
+    <h5 class="card-title">{{ item.title }}</h5>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{ item.description }}</li>
+      <li class="list-group-item">{{ item.cost | currency }}</li>
+    </ul>
+  </div>
+  <div class="card-body">
+    <a class="btn btn-dark" [routerLink]="['/edit', item.id]">Edit</a> |
+    <button class="btn btn-danger" type="button" (click)="onDelete(item)">
+      Delete
+    </button>
+  </div>
+</div>
